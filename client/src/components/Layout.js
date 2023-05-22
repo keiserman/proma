@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import Topbar from './Topbar';
+import ChannelDetails from './ChannelDetails';
 
-function Layout({ children }) {
+function Layout() {
+
+    const [selectedChannel, setSelectedChannel] = useState(null);
+
+    const handleSelectChannel = (channel) => {
+        setSelectedChannel(channel);
+    }
+    
     return (
-        <div className="h-screen w-full flex overflow-hidden">
-            <Sidebar />
-            <div className="flex flex-col w-full overflow-auto">
+        <div className="flex">
+            <Sidebar onSelectChannel={handleSelectChannel} />
+            <div className="flex-grow">
                 <Topbar />
-                <main className="p-4">
-                    {children}
-                </main>
+                <ChannelDetails channel={selectedChannel} />
             </div>
         </div>
-    );
+  );
+    
 }
 
 export default Layout;
