@@ -26,14 +26,10 @@ function ChannelItem({ channel, handleDeleteSubchannel, handleDeleteChannel, onS
         <div className='flex' onClick={(e) => e.stopPropagation()}>
           {channel.subchannels && channel.subchannels.length > 0 && (
             <FiChevronDown
-              className={`transform transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+              className={`icon-md transform transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
               onClick={handleDropdown}
             />
           )}
-          <FiTrash className="h-4 w-4 text-slate-400 ml-2" onClick={(e) => {
-            e.stopPropagation();
-            handleDeleteChannel(channel.id);
-          }} />
         </div>
       </div>
       {isOpen && channel.subchannels && channel.subchannels.length > 0 && (
@@ -44,7 +40,7 @@ function ChannelItem({ channel, handleDeleteSubchannel, handleDeleteChannel, onS
                   <BsCircleFill className="h-2 w-2 mr-3 text-slate-400" />
                   <span>{subchannel.name}</span>
                 </div>
-                <FiTrash className="h-4 w-4 text-slate-400" onClick={(e) => {
+                <FiTrash className="icon-md text-slate-400" onClick={(e) => {
                   e.stopPropagation();
                   handleDeleteSubchannel(channel.id, subchannel.id);
                 }} />
