@@ -3,5 +3,9 @@
 @import 'tailwindcss/utilities';
 
 .icon-md {
+    @apply h-6 w-6 cursor-pointer;
+}
+
+.icon-sm {
     @apply h-4 w-4 cursor-pointer;
 }

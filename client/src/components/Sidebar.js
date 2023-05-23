@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../proma-logo.svg";
 import ChannelItem from "./ChannelItem";
-import { FiPlusCircle, FiMoreHorizontal } from "react-icons/fi";
+import { MdOutlineAddCircleOutline, MdOutlineMoreHoriz } from 'react-icons/md';
 
 function Sidebar({
   channels,
@@ -18,7 +18,7 @@ function Sidebar({
       <div className="p-4 flex flex-col grow">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-bold">Workspace</h2>
-          <FiMoreHorizontal className="icon-md" />
+          <MdOutlineMoreHoriz className="icon-md bg-slate-800 text-slate-300 rounded-full" />
         </div>
         <div className="flex uppercase font-bold text-sm text-slate-300 mb-2">
           Projects
@@ -39,7 +39,7 @@ function Sidebar({
         className="w-full mt-4 p-6 hover:bg-slate-800 border-t border-slate-700 text-white inline-flex items-center justify-center"
         onClick={addChannel}
       >
-        <FiPlusCircle className="icon-md mr-2" />
+        <MdOutlineAddCircleOutline className="icon-md mr-2" />
         Add Channel
       </button>
     </aside>

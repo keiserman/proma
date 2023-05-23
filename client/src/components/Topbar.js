@@ -1,5 +1,5 @@
 import React from 'react';
-import {  FiSearch, FiBell, FiAlertCircle, FiUser } from 'react-icons/fi';
+import {  MdOutlineNotifications, MdHelpOutline, MdPersonOutline, MdOutlineSearch } from 'react-icons/md';
 
 function Topbar() {
     return (
@@ -8,16 +8,16 @@ function Topbar() {
                 <label htmlFor="search" className="mb-2 text-sm font-medium text-slate-900 sr-only dark:text-white">Search</label>
                 <div className='relative'>
                     <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
-                    <FiSearch className="icon-md" />
+                    <MdOutlineSearch className="icon-md" />
                     </div>
                     <input type="search" id="search" className="w-full block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded" placeholder="Search" required />
                 </div>
             </form>
 
             <div className='flex flex-row gap-4'>
-                <FiBell className="icon-md" />
-                <FiAlertCircle className="icon-md" />
-                <FiUser className="icon-md" />
+                <MdOutlineNotifications className="icon-md" />
+                <MdHelpOutline className="icon-md" />
+                <MdPersonOutline className="icon-md" />
             </div>
         </div>
     );

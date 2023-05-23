@@ -11,12 +11,13 @@ const initialChannels = [
       { id: 1, name: "Sub 1" },
       { id: 2, name: "Sub 2" },
     ],
+    messages: [],
   },
-  { id: 2, name: "Amazon" },
-  { id: 3, name: "Google" },
-  { id: 4, name: "Microsoft" },
-  { id: 5, name: "Facebook" },
-  { id: 6, name: "Instagram" },
+  { id: 2, name: "Amazon", messages: [] },
+  { id: 3, name: "Google", messages: [] },
+  { id: 4, name: "Microsoft", messages: [] },
+  { id: 5, name: "Facebook", messages: [] },
+  { id: 6, name: "Instagram", messages: [] },
 ];
 
 function Layout() {
@@ -70,6 +71,27 @@ function Layout() {
     setSelectedChannel(channel);
   };
 
+  const handleSendMessage = (channelId, message) => {
+    setChannels((prevChannels) => {
+      const updatedChannels = prevChannels.map((channel) => {
+        if (channel.id === channelId) {
+          const updatedChannel = {
+            ...channel,
+            messages: [
+              ...channel.messages,
+              { id: Date.now(), text: message, timestamp: new Date() },
+            ],
+          };
+          setSelectedChannel(updatedChannel);
+          return updatedChannel;
+        }
+        return channel;
+      });
+      return updatedChannels;
+    });
+  };
+  
+
   return (
     <div className="flex">
       <Sidebar
@@ -84,6 +106,7 @@ function Layout() {
         <ChannelDetails
           channel={selectedChannel}
           handleDeleteChannel={handleDeleteChannel}
+          handleSendMessage={handleSendMessage}
         />
       </div>
     </div>

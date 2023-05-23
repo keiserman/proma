@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
-import { BsCircleFill } from 'react-icons/bs'; 
-import { FiTrash, FiChevronDown} from "react-icons/fi";
+import React, { useState } from "react";
+import { BsCircleFill } from "react-icons/bs";
+import { MdDeleteOutline, MdOutlineKeyboardArrowDown } from "react-icons/md";
 
-function ChannelItem({ channel, handleDeleteSubchannel, handleDeleteChannel, onSelectChannel }) {
+function ChannelItem({
+  channel,
+  handleDeleteSubchannel,
+  handleDeleteChannel,
+  onSelectChannel,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDropdown = () => {
     setIsOpen(!isOpen);
-  }
+  };
 
   const handleSelect = () => {
     onSelectChannel(channel);
-  }
+  };
 
   return (
     <>
@@ -21,12 +26,14 @@ function ChannelItem({ channel, handleDeleteSubchannel, handleDeleteChannel, onS
       >
         <div className="flex items-center">
           <BsCircleFill className="h-2 w-2 mr-3 text-slate-400" />
-          <span className='text-slate-300 font-semibold'>{channel.name}</span>
+          <span className="text-slate-300 font-semibold">{channel.name}</span>
         </div>
-        <div className='flex' onClick={(e) => e.stopPropagation()}>
+        <div className="flex" onClick={(e) => e.stopPropagation()}>
           {channel.subchannels && channel.subchannels.length > 0 && (
-            <FiChevronDown
-              className={`icon-md transform transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+            <MdOutlineKeyboardArrowDown
+              className={`icon-md transform transition-transform duration-200 ${
+                isOpen ? "rotate-180" : ""
+              }`}
               onClick={handleDropdown}
             />
           )}
@@ -34,22 +41,28 @@ function ChannelItem({ channel, handleDeleteSubchannel, handleDeleteChannel, onS
       </div>
       {isOpen && channel.subchannels && channel.subchannels.length > 0 && (
         <div className="text-left">
-          {channel.subchannels.map(subchannel => (
-            <div key={subchannel.id} className="py-1 px-4 rounded flex items-center justify-between hover:bg-slate-800 cursor-pointer">
-                <div className="flex items-center">
-                  <BsCircleFill className="h-2 w-2 mr-3 text-slate-400" />
-                  <span>{subchannel.name}</span>
-                </div>
-                <FiTrash className="icon-md text-slate-400" onClick={(e) => {
+          {channel.subchannels.map((subchannel) => (
+            <div
+              key={subchannel.id}
+              className="py-1 px-4 rounded flex items-center justify-between hover:bg-slate-800 cursor-pointer"
+            >
+              <div className="flex items-center">
+                <BsCircleFill className="h-2 w-2 mr-3 text-slate-400" />
+                <span>{subchannel.name}</span>
+              </div>
+              <MdDeleteOutline
+                className="icon-sm text-slate-400"
+                onClick={(e) => {
                   e.stopPropagation();
                   handleDeleteSubchannel(channel.id, subchannel.id);
-                }} />
+                }}
+              />
             </div>
           ))}
         </div>
       )}
     </>
-  )
+  );
 }
 
 export default ChannelItem;
