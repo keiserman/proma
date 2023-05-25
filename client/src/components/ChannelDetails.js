@@ -14,6 +14,7 @@ function ChannelDetails({
   handleSendMessage,
   handleAddTask,
   handleCheckTask,
+  handleConvertToTask,
 }) {
   const [messageInput, setMessageInput] = useState("");
   const [taskInput, setTaskInput] = useState("");
@@ -59,10 +60,12 @@ function ChannelDetails({
 
       <div className="grid grid-cols-2">
         <Chat
+          channelId={channel.id}
           messages={channel.messages}
           messageInput={messageInput}
           setMessageInput={setMessageInput}
           onSubmit={onSubmit}
+          handleConvertToTask={handleConvertToTask}
         />
 
         <TaskList

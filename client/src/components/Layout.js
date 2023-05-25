@@ -131,6 +131,17 @@ function Layout() {
     });
   }
 
+  const handleConvertToTask = (channelId, taskText) => {
+    const updatedChannels = channels.map((channel) => {
+      if (channel.id === channelId) {
+        const newTask = { text: taskText, completed: false };
+        return { ...channel, tasks: [...channel.tasks, newTask] };
+      }
+      return channel;
+    });
+    setChannels(updatedChannels);
+  };
+
   return (
     <div className="grid grid-cols-6 h-screen">
       <Sidebar
@@ -148,6 +159,7 @@ function Layout() {
           handleSendMessage={handleSendMessage}
           handleAddTask={handleAddTask}
           handleCheckTask={handleCheckTask}
+          handleConvertToTask={handleConvertToTask}
         />
       </div>
     </div>
