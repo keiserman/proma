@@ -11,7 +11,7 @@ function Sidebar({
   onSelectChannel,
 }) {
   return (
-    <aside className="w-80 bg-slate-900 text-white flex flex-col min-h-screen">
+    <aside className="bg-slate-900 text-white flex flex-col">
       <div className="flex justify-between items-center h-20 border-b border-slate-700 p-4">
         <img src={logo} width={100} height={100} alt="Logo" />
       </div>
