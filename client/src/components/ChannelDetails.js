@@ -47,7 +47,7 @@ function ChannelDetails({
   };
 
   return (
-    <div>
+    <div className="flex flex-col h-full">
       <div className="flex items-center justify-between p-4 border-b border-slate-200">
         <h1 className="text-xl">{channel.name}</h1>
         <div className="flex items-center gap-4 text-slate-500">
@@ -58,7 +58,7 @@ function ChannelDetails({
         </div>
       </div>
 
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 flex-grow">
         <Chat
           channelId={channel.id}
           messages={channel.messages}

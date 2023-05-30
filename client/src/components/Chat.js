@@ -12,7 +12,7 @@ function Chat({ channelId, messages, messageInput, setMessageInput, onSubmit, ha
       >
         <input
           type="text"
-          className="px-4 py-2 rounded border border-slate-200 mb-2 focus:ring-0 grow"
+          className="px-4 py-2 rounded border border-slate-300 mb-2 focus:outline-none grow"
           placeholder="Write your message here..."
           value={messageInput}
           onChange={(e) => setMessageInput(e.target.value)}

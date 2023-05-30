@@ -1,5 +1,5 @@
 import React from "react";
-import { MdCheckBoxOutlineBlank, MdCheckBox } from "react-icons/md";
+import { MdCheckBoxOutlineBlank, MdCheckBox, MdAddCircleOutline } from "react-icons/md";
 
 function TaskList({
   channelId,
@@ -19,17 +19,15 @@ function TaskList({
         >
           {task.completed ? (
             <MdCheckBox
-              className="icon-md text-slate-500"
+              className="icon-md text-slate-500 flex-none"
               onClick={() => {
-                console.log("Checkbox clicked", channelId, index);
                 handleCheckTask(channelId, index);
               }}
             />
           ) : (
             <MdCheckBoxOutlineBlank
-              className="icon-md text-slate-500"
+              className="icon-md text-slate-500 flex-none"
               onClick={() => {
-                console.log("Checkbox clicked", channelId, index);
                 handleCheckTask(channelId, index);
               }}
             />
@@ -40,15 +38,15 @@ function TaskList({
         </div>
       ))}
 
-      <form onSubmit={onTaskSubmit}>
+      <form onSubmit={onTaskSubmit} className="flex gap-2 mt-2">
         <input
           type="text"
-          className="task-input"
+          className="task-input p-2 grow bg-transparent border-b border-slate-300 focus:outline-none"
           placeholder="Add a task..."
           value={taskInput}
           onChange={(e) => setTaskInput(e.target.value)}
         />
-        <button type="submit">Add Task</button>
+        <button type="submit"><MdAddCircleOutline className="icon-md text-slate-400"/></button>
       </form>
     </div>
   );

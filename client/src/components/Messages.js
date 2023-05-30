@@ -9,7 +9,7 @@ function Messages({ channelId, messages, onConvertToTask }) {
           key={message.id}
           className="message py-1 flex gap-4 hover:bg-slate-50"
         >
-          <div className="h-10 w-10 bg-slate-300 rounded"></div>
+          <div className="h-12 w-12 flex-none bg-slate-300 rounded"></div>
           <div className="flex flex-col grow">
             <div className="flex gap-2">
               <span className="text-slate-700 font-bold">Kevin</span>

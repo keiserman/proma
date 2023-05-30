@@ -13,7 +13,7 @@ function Sidebar({
   return (
     <aside className="bg-slate-900 text-white flex flex-col">
       <div className="flex justify-between items-center h-20 border-b border-slate-700 p-4">
-        <img src={logo} width={100} height={100} alt="Logo" />
+        <img src={logo} width={90} alt="Logo" />
       </div>
       <div className="p-4 flex flex-col grow">
         <div className="flex justify-between items-center mb-4">

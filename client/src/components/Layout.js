@@ -8,7 +8,11 @@ const initialChannels = [
     id: 1,
     name: "Apple",
     messages: [
-      { id: 1, text: "asdasd", timestamp: "9:01 AM" },
+      {
+        id: 1,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc id cursus metus aliquam eleifend mi in nulla posuere.",
+        timestamp: "9:01 AM",
+      },
       { id: 2, text: "asdasd", timestamp: "9:02 AM" },
     ],
     tasks: [
@@ -143,7 +147,7 @@ function Layout() {
   };
 
   return (
-    <div className="grid grid-cols-6 h-screen">
+    <div className="grid grid-cols-6 grid-rows-1 h-screen">
       <Sidebar
         channels={channels}
         addChannel={addChannel}
@@ -151,7 +155,7 @@ function Layout() {
         handleDeleteChannel={handleDeleteChannel}
         onSelectChannel={handleSelectChannel}
       />
-      <div className="flex-grow col-span-5">
+      <div className="flex-grow col-span-5 row-span-1">
         <Topbar />
         <ChannelDetails
           channel={selectedChannel}

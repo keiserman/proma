@@ -21,7 +21,7 @@ function ChannelItem({
   return (
     <>
       <div
-        className="flex justify-between items-center py-1 px-3 rounded bg-slate-800 hover:bg-slate-700 cursor-pointer"
+        className="flex justify-between items-center p-2 rounded hover:bg-slate-800 cursor-pointer"
         onClick={handleSelect}
       >
         <div className="flex items-center">
