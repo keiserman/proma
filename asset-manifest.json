@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/keiserman/proma/static/css/main.5b3e859a.css",
+    "main.js": "/keiserman/proma/static/js/main.df3debe7.js",
+    "static/js/787.0d63d375.chunk.js": "/keiserman/proma/static/js/787.0d63d375.chunk.js",
+    "static/media/proma-logo.svg": "/keiserman/proma/static/media/proma-logo.acde4e5a07a91f9f5d51af01793c6f7b.svg",
+    "index.html": "/keiserman/proma/index.html",
+    "main.5b3e859a.css.map": "/keiserman/proma/static/css/main.5b3e859a.css.map",
+    "main.df3debe7.js.map": "/keiserman/proma/static/js/main.df3debe7.js.map",
+    "787.0d63d375.chunk.js.map": "/keiserman/proma/static/js/787.0d63d375.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b3e859a.css",
+    "static/js/main.df3debe7.js"
+  ]
+}
