@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/proma/static/css/main.c4923329.css",
-    "main.js": "/proma/static/js/main.86d5218e.js",
+    "main.css": "/proma/static/css/main.354801de.css",
+    "main.js": "/proma/static/js/main.90c2e087.js",
     "static/js/787.0d63d375.chunk.js": "/proma/static/js/787.0d63d375.chunk.js",
     "static/media/proma-logo.svg": "/proma/static/media/proma-logo.acde4e5a07a91f9f5d51af01793c6f7b.svg",
     "index.html": "/proma/index.html",
-    "main.c4923329.css.map": "/proma/static/css/main.c4923329.css.map",
-    "main.86d5218e.js.map": "/proma/static/js/main.86d5218e.js.map",
+    "main.354801de.css.map": "/proma/static/css/main.354801de.css.map",
+    "main.90c2e087.js.map": "/proma/static/js/main.90c2e087.js.map",
     "787.0d63d375.chunk.js.map": "/proma/static/js/787.0d63d375.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4923329.css",
-    "static/js/main.86d5218e.js"
+    "static/css/main.354801de.css",
+    "static/js/main.90c2e087.js"
   ]
 }
