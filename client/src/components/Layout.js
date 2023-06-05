@@ -6,18 +6,23 @@ import ChannelDetails from "./ChannelDetails";
 const initialChannels = [
   {
     id: 1,
-    name: "Apple",
+    name: "Project 1",
     messages: [
       {
         id: 1,
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc id cursus metus aliquam eleifend mi in nulla posuere.",
+        name: "Kevin",
+        text: "Hey, can we have a quick chat about the progress of the ABC Project?",
         timestamp: "9:01 AM",
       },
-      { id: 2, text: "asdasd", timestamp: "9:02 AM" },
-    ],
+      { id: 2, name: "Kevin", text: "Of course, what do you need to know?", timestamp: "9:02 AM" },
+      { id: 3, name: "Kevin", text: "I was looking at the project tracker and I noticed that we're behind on a few key tasks. Specifically, the design phase is almost a week overdue. Do you know what's causing the delay?", timestamp: "9:03 AM" },
+      { id: 4, name: "Kevin", text: "Yes, we had a few unexpected issues with the design. We realized our initial design didn't cater well to our mobile users, so we decided to pivot and redesign a significant part of the interface. It took longer than we anticipated, but I believe it's a worthy investment for the project's long-term success.", timestamp: "9:04 AM" },
+      ],
     tasks: [
-      { completed: true, text: "asdasd" },
-      { completed: false, text: "asdasds" },
+      { completed: true, text: "Design business card" },
+      { completed: false, text: "Add interaction to website" },
+      { completed: false, text: "Switch logo on website" },
+      { completed: false, text: "Change brand colors" },
     ],
   },
 
@@ -43,6 +48,8 @@ function Layout() {
       const newChannel = {
         id: channels.length + 1,
         name: newChannelName,
+        messages: [],
+        tasks: []
       };
       setChannels([...channels, newChannel]);
     } else {
@@ -147,7 +154,7 @@ function Layout() {
   };
 
   return (
-    <div className="grid grid-cols-6 grid-rows-1 h-screen">
+    <div className="flex h-screen">
       <Sidebar
         channels={channels}
         addChannel={addChannel}
@@ -155,7 +162,7 @@ function Layout() {
         handleDeleteChannel={handleDeleteChannel}
         onSelectChannel={handleSelectChannel}
       />
-      <div className="flex-grow col-span-5 row-span-1">
+      <div className="flex flex-col flex-grow">
         <Topbar />
         <ChannelDetails
           channel={selectedChannel}

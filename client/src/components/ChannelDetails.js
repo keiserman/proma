@@ -47,7 +47,7 @@ function ChannelDetails({
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col flex-grow">
       <div className="flex items-center justify-between p-4 border-b border-slate-200">
         <h1 className="text-xl">{channel.name}</h1>
         <div className="flex items-center gap-4 text-slate-500">

@@ -2,13 +2,13 @@ import React from "react";
 import {
   MdOutlineNotifications,
   MdHelpOutline,
-  MdPersonOutline,
   MdOutlineSearch,
+  MdOutlineKeyboardArrowDown,
 } from "react-icons/md";
 
 function Topbar() {
   return (
-    <div className="w-full flex items-center gap-4 shadow-sm text-slate-500 p-4 h-20 border-b border-slate-200">
+    <div className="flex items-center gap-4 shadow-sm text-slate-500 p-4 h-16 border-b border-slate-200">
       <form className="grow">
         <label
           htmlFor="search"
@@ -30,10 +30,14 @@ function Topbar() {
         </div>
       </form>
 
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row gap-4 items-center text-slate-500">
         <MdOutlineNotifications className="icon-md" />
         <MdHelpOutline className="icon-md" />
-        <MdPersonOutline className="icon-md" />
+        <div className="w-px bg-slate-200 h-5"></div>
+        <div className="flex items-center gap-1">
+          <div className="w-6 h-6 rounded-full bg-slate-400"></div>
+          <MdOutlineKeyboardArrowDown className="icon-sm" />
+        </div>
       </div>
     </div>
   );

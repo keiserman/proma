@@ -4,11 +4,11 @@ import { MdSend } from "react-icons/md";
 
 function Chat({ channelId, messages, messageInput, setMessageInput, onSubmit, handleConvertToTask }) {
   return (
-    <div className="chat-wrapper text-left p-4">
+    <div className="chat-wrapper text-left p-4 self-end">
       <Messages channelId={channelId} messages={messages} onConvertToTask={handleConvertToTask} />
       <form
         onSubmit={onSubmit}
-        className="flex justify-start items-center gap-2 rounded"
+        className="flex justify-start items-center gap-4 rounded"
       >
         <input
           type="text"

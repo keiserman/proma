@@ -11,8 +11,8 @@ function Sidebar({
   onSelectChannel,
 }) {
   return (
-    <aside className="bg-slate-900 text-white flex flex-col">
-      <div className="flex justify-between items-center h-20 border-b border-slate-700 p-4">
+    <aside className="bg-slate-900 text-white flex flex-col w-80 flex-none">
+      <div className="flex justify-between items-center h-16 p-4">
         <img src={logo} width={90} alt="Logo" />
       </div>
       <div className="p-4 flex flex-col grow">
@@ -20,7 +20,7 @@ function Sidebar({
           <h2 className="text-lg font-bold">Workspace</h2>
           <MdOutlineMoreHoriz className="icon-md bg-slate-800 text-slate-300 rounded-full" />
         </div>
-        <div className="flex uppercase font-bold text-sm text-slate-300 mb-2">
+        <div className="uppercase font-bold text-sm text-slate-300 mb-2 hidden">
           Projects
         </div>
         <div className="flex flex-col gap-2">

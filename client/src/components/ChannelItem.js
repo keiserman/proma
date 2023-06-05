@@ -21,12 +21,12 @@ function ChannelItem({
   return (
     <>
       <div
-        className="flex justify-between items-center p-2 rounded hover:bg-slate-800 cursor-pointer"
+        className="flex justify-between items-center px-3 py-2 rounded bg-slate-800 hover:bg-slate-700 cursor-pointer"
         onClick={handleSelect}
       >
         <div className="flex items-center">
           <BsCircleFill className="h-2 w-2 mr-3 text-slate-400" />
-          <span className="text-slate-300 font-semibold">{channel.name}</span>
+          <span className="text-slate-300 text-base font-semibold">{channel.name}</span>
         </div>
         <div className="flex" onClick={(e) => e.stopPropagation()}>
           {channel.subchannels && channel.subchannels.length > 0 && (
